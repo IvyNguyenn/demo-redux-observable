@@ -1,0 +1,17 @@
+export const FETCH_USER = "FETCH_USER";
+export const CANCEL_FETCHING_USER = "CANCEL_FETCHING_USER";
+export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
+
+export const INCREASE = "INCREASE";
+export const INCREASE_DONE = "INCREASE_DONE";
+export const DECREASE = "DECREASE";
+export const STOP_COUNTER = "STOP_COUNTER";
+
+export const PING = "PING";
+export const PONG = "PONG";
+
+export const INCREMENT_DEBOUNCED = "INCREMENT_DEBOUNCED";
+export const DECREMENT_DEBOUNCED = "DECREMENT_DEBOUNCED";
+
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
