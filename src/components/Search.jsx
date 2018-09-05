@@ -1,31 +1,36 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ping } from "../actions/pingPongAction";
+import { searchRequest, searchCancel } from "../actions/searchAction";
 
 class Search extends React.Component {
     onSearch = event => {
         event.preventDefault();
-        var { dispatch } = this.props;
-        dispatch({ type: "FETCH_USER", payload: this.refs.txt.value });
+        this.props.onSearchRequest(this.refs.search.value);
     };
     render() {
-        const {} = this.props;
+        const { search } = this.props;
         return (
             <form onSubmit={this.onSearch}>
-                <input type="text" placeholder="Add note" ref="txt" />
-                <br />
+                <input type="text" placeholder="Search ..." ref="search" />
                 <button>Search</button>
+                <br />
+                <h4>{search.keyword}</h4>
             </form>
         );
     }
 }
 
 let mapStateToProps = state => {
-    return {};
+    return {
+        search: state.search
+    };
 };
 
 let mapDispatchToProps = dispatch => {
-    return {};
+    return {
+        onSearchRequest: keyword => dispatch(searchRequest(keyword)),
+        onSearchCancel: () => dispatch(searchCancel())
+    };
 };
 
 export default connect(

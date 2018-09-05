@@ -5,6 +5,7 @@ import PingPong from "./components/PingPong";
 import Couter from "./components/Couter";
 import User from "./components/User";
 import UpDown from "./components/UpDown";
+import Search from "./components/Search";
 
 class App extends Component {
     render() {
@@ -18,6 +19,8 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to
                     reload.
                 </p>
+                <Search />
+                <hr />
                 <PingPong />
                 <hr />
                 <Couter />
@@ -25,6 +28,7 @@ class App extends Component {
                 <User />
                 <hr />
                 <UpDown />
+                <hr />
             </div>
         );
     }

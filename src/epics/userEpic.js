@@ -9,7 +9,7 @@ const fakeApi = name =>
         email: "hoangvy@gmail.com"
     }).delay(2000);
 
-export default action$ =>
+const userEpic = action$ =>
     action$.ofType(Types.FETCH_USER).mergeMap(action =>
         fakeApi(action.name)
             .map(response => ({
@@ -18,3 +18,5 @@ export default action$ =>
             }))
             .takeUntil(action$.ofType(Types.CANCEL_FETCHING_USER))
     );
+
+export default userEpic;
